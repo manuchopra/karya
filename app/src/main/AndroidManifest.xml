@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="de.fhdw.ergoholics.brainphaser">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".BrainPhaserApplication3"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+        <activity
+            android:name="com.nononsenseapps.filepicker.FilePickerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/FilePickerTheme"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.main.ProxyActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.fileimport.ImportChallengeActivity"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file"/>
+                <data android:host="*"/>
+                <data android:pathPattern=".*\\.bpc"/>
+                <data android:pathPattern=".*\\..*\\.bpc"/>
+                <data android:pathPattern=".*\\..*\\..*\\.bpc"/>
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.bpc"/>
+                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\.bpc"/>
+                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\.bpc"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content"/>
+                <data android:host="*"/>
+                <data android:pathPattern=".*"/>
+                <data android:mimeType="text/xml"/>
+                <data android:mimeType="application/octet-stream"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.createuser.CreateUserActivity"/>
+        <activity
+            android:name=".activities.selectuser.UserSelectionActivity"
+            android:label="@string/select_user"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.main.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".activities.aboutscreen.AboutActivity"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:label="@string/about"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.main.MainActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden"
+            >
+        </activity>
+        <activity
+            android:name=".activities.playchallenge.ChallengeActivity"
+            android:label="@string/nav_learn"
+            android:windowSoftInputMode="stateHidden"
+            android:parentActivityName=".activities.main.MainActivity"
+            >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.main.MainActivity"/>
+        </activity>
+        <activity android:name=".activities.statistics.StatisticsActivity"
+            android:label="@string/statistics_label"
+            android:parentActivityName=".activities.main.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.main.MainActivity"/>
+        </activity>
+        <activity android:name=".activities.usersettings.SettingsActivity"
+            android:label="@string/settings_label"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".activities.main.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.main.MainActivity"/>
+        </activity>
+    </application>
+</manifest>

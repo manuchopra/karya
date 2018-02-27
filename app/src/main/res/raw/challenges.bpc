@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<categories>
+<category description="शुरुआत में, आपको प्रशिक्षित करने के लिए कुछ अभ्यास शब्द मिलेंगे!" image="@drawable/c1" title="डिजिटायजेशन">
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i1"> <answer correct="true" text="क"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i2"> <answer correct="true" text="का"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i3"> <answer correct="true" text="को"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i4"> <answer correct="true" text="के"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i5"> <answer correct="true" text="कि"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i6"> <answer correct="true" text="हैै"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i7"> <answer correct="true" text="हैं"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i8"> <answer correct="true" text="ही"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i9"> <answer correct="true" text="हम"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i10"> <answer correct="true" text="बूम"/>
+</challenge>
+<challenge question="नीचे दी गई छवि में टेक्स्ट को टाइप करें" type="2" image="@drawable/i11"> <answer correct="true" text="मजाक"/>
+</challenge>
+ </category>
+</categories>
