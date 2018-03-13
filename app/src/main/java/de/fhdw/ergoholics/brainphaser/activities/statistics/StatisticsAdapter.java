@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.database.ChallengeDataSource;
 import de.fhdw.ergoholics.brainphaser.logic.UserLogicFactory;
@@ -19,7 +19,6 @@ import de.fhdw.ergoholics.brainphaser.logic.statistics.StatisticType;
 import de.fhdw.ergoholics.brainphaser.model.User;
 
 /**
- * Created by Daniel Hoogen on 09/03/2016.
  * <p/>
  * This adapter adds the StatisticViewHolder objects to the recycler view it is assigned to
  */
@@ -37,7 +36,7 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticViewHolder>
     //Attributes
     private UserLogicFactory mUserLogicFactory;
     private ChallengeDataSource mChallengeDataSource;
-    private BrainPhaserApplication3 mApplication;
+    private ProjectKarya mApplication;
     private User mUser;
     private long mCategoryId;
     private List<StatisticType> mStatisticItems;
@@ -54,7 +53,7 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticViewHolder>
      */
     public StatisticsAdapter(UserLogicFactory userLogicFactory,
                              ChallengeDataSource challengeDataSource,
-                             BrainPhaserApplication3 application, User user, long categoryId,
+                             ProjectKarya application, User user, long categoryId,
                              List<StatisticType> itemsToShow) {
         mUserLogicFactory = userLogicFactory;
         mChallengeDataSource = challengeDataSource;

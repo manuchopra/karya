@@ -14,11 +14,10 @@ import com.github.mikephil.charting.data.PieDataSet;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.R;
 
 /**
- * Created by Daniel Hoogen on 12/03/2016.
  * <p/>
  * This class is used for pllying default settings to a pie chart that is shown in the statistics
  * activity.
@@ -37,7 +36,7 @@ public class ChartSettings {
     private int[] mColorsetStage = new int[6];
     private int[] mColorsetPlayed = new int[3];
     private int[] mColorsetDue = new int[2];
-    private BrainPhaserApplication3 mApplication;
+    private ProjectKarya mApplication;
 
     /**
      * Constructor which saves the given parameters as member attributes and retrieves the chart
@@ -46,7 +45,7 @@ public class ChartSettings {
      * @param application the BrainPhaserApplication to be saved as a member attribute
      */
     @Inject
-    public ChartSettings(BrainPhaserApplication3 application) {
+    public ChartSettings(ProjectKarya application) {
         mApplication = application;
 
         Context applicationContext = mApplication.getApplicationContext();

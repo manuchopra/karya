@@ -15,7 +15,6 @@ import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.model.Answer;
 
 /**
- * Created by Christian Kost
  * <p/>
  * Adapter to load the given answers into a simple list
  */

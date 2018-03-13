@@ -8,7 +8,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.R;
 
 /**
@@ -18,7 +18,7 @@ import de.fhdw.ergoholics.brainphaser.R;
  */
 public class StatisticsLogic {
     //Attributes
-    private BrainPhaserApplication3 mApplication;
+    private ProjectKarya mApplication;
     private ChartSettings mSettings;
     private ChartDataLogic mDataLogic;
 
@@ -30,7 +30,7 @@ public class StatisticsLogic {
      * @param chartDataLogic the chart data logic to be saved as a member attribute
      */
     @Inject
-    public StatisticsLogic(BrainPhaserApplication3 application, ChartSettings chartSettings, ChartDataLogic chartDataLogic) {
+    public StatisticsLogic(ProjectKarya application, ChartSettings chartSettings, ChartDataLogic chartDataLogic) {
         mApplication = application;
 
         mSettings = chartSettings;

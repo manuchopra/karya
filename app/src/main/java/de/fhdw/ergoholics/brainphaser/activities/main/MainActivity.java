@@ -17,7 +17,7 @@ import com.nononsenseapps.filepicker.FilePickerActivity;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.BrainPhaserComponent;
 import de.fhdw.ergoholics.brainphaser.BuildConfig;
 import de.fhdw.ergoholics.brainphaser.R;
@@ -29,7 +29,6 @@ import de.fhdw.ergoholics.brainphaser.activities.usersettings.SettingsActivity;
 import de.fhdw.ergoholics.brainphaser.logic.UserManager;
 
 /**
- * Created by funkv on 20.02.2016.
  *
  * The activity redirects to user creation on first launch, or loads last selected user if it has
  * been launched before.

@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 import android.Manifest;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.BrainPhaserComponent;
 import de.fhdw.ergoholics.brainphaser.activities.main.MainActivity;
 
@@ -35,7 +35,7 @@ public abstract class BrainPhaserActivity extends AppCompatActivity {
 //        askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE,READ_EXST);
 //        askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,WRITE_EXST);
 
-        injectComponent(((BrainPhaserApplication3) getApplication()).getComponent());
+        injectComponent(((ProjectKarya) getApplication()).getComponent());
     }
 
     private void askForPermission(String permission, Integer requestCode) {

@@ -7,7 +7,7 @@ import com.github.mikephil.charting.data.PieDataSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.database.ChallengeDataSource;
 import de.fhdw.ergoholics.brainphaser.database.CompletionDataSource;
@@ -29,7 +29,7 @@ public class ChartDataLogic {
     //Attributes
     private User mUser;
     private long mCategoryId;
-    private BrainPhaserApplication3 mApplication;
+    private ProjectKarya mApplication;
     private UserLogicFactory mUserLogicFactory;
     private ChallengeDataSource mChallengeDataSource;
     private CompletionDataSource mCompletionDataSource;
@@ -50,7 +50,7 @@ public class ChartDataLogic {
      * @param userLogicFactory     the user logic factory  to be saved as a member attribute
      */
     public ChartDataLogic(User user, long categoryId,
-                          BrainPhaserApplication3 application,
+                          ProjectKarya application,
                           ChallengeDataSource challengeDataSource,
                           CompletionDataSource completionDataSource,
                           StatisticsDataSource statisticsDataSource,

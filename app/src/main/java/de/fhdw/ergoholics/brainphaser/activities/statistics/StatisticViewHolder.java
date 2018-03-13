@@ -9,7 +9,7 @@ import com.github.mikephil.charting.data.Entry;
 
 import java.util.List;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.database.ChallengeDataSource;
 import de.fhdw.ergoholics.brainphaser.logic.UserLogicFactory;
@@ -18,7 +18,6 @@ import de.fhdw.ergoholics.brainphaser.logic.statistics.StatisticsLogic;
 import de.fhdw.ergoholics.brainphaser.model.User;
 
 /**
- * Created by Daniel Hoogen on 09/03/2016
  * <p/>
  * The view holder is responsible for the view interaction with each statistic within a
  * RecyclerView.
@@ -31,7 +30,7 @@ public class StatisticViewHolder extends RecyclerView.ViewHolder {
     //Attributes
     private View mItemView;
     private ChallengeDataSource mChallengeDataSource;
-    private BrainPhaserApplication3 mApplication;
+    private ProjectKarya mApplication;
     private StatisticsLogic mStatisticsLogic;
     private List<Long> mShownChallenges;
 
@@ -48,7 +47,7 @@ public class StatisticViewHolder extends RecyclerView.ViewHolder {
      */
     public StatisticViewHolder(View itemView, UserLogicFactory userLogicFactory,
                                ChallengeDataSource challengeDataSource,
-                               BrainPhaserApplication3 application, User user, long categoryId) {
+                               ProjectKarya application, User user, long categoryId) {
         super(itemView);
         mItemView = itemView;
         mChallengeDataSource = challengeDataSource;

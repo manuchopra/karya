@@ -3,7 +3,7 @@ package de.fhdw.ergoholics.brainphaser.activities;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.BrainPhaserComponent;
 
 /**
@@ -23,7 +23,7 @@ public abstract class BrainPhaserFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        injectComponent(((BrainPhaserApplication3) getActivity().getApplication()).getComponent());
+        injectComponent(((ProjectKarya) getActivity().getApplication()).getComponent());
     }
 
     /**

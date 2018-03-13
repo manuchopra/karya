@@ -15,7 +15,6 @@ import de.fhdw.ergoholics.brainphaser.model.Answer;
 import de.fhdw.ergoholics.brainphaser.model.Challenge;
 
 /**
- * Created by Christian Kost
  * <p/>
  * The abstract fragment contains all necessary  methods for the different challenge-type fragments
  */

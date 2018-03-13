@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.logic.fileimport.bpc.BPCObjects;
 import de.fhdw.ergoholics.brainphaser.logic.fileimport.bpc.BPCRead;
 import de.fhdw.ergoholics.brainphaser.logic.fileimport.bpc.BPCWrite;
@@ -36,7 +36,7 @@ public class FileImport {
      * @throws ElementAmountException     if an element occurs more or less often than expected
      * @throws InvalidAttributeException  if an attribute has an invalid value
      */
-    public static void importBPC(InputStream is, BrainPhaserApplication3 application)
+    public static void importBPC(InputStream is, ProjectKarya application)
             throws FileFormatException, UnexpectedElementException, ElementAmountException,
             InvalidAttributeException {
 

@@ -7,8 +7,6 @@ import java.util.List;
 import de.fhdw.ergoholics.brainphaser.logic.statistics.StatisticType;
 
 /**
- * Created by Daniel Hoogen on 17/03/2016.
- * <p>
  * This class calculates the span sizes for the ViewHolders in the recycler view used in the
  * statistics activity
  * </p>

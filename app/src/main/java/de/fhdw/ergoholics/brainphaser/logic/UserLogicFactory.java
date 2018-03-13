@@ -2,7 +2,7 @@ package de.fhdw.ergoholics.brainphaser.logic;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.database.ChallengeDataSource;
 import de.fhdw.ergoholics.brainphaser.database.CompletionDataSource;
 import de.fhdw.ergoholics.brainphaser.database.StatisticsDataSource;
@@ -19,7 +19,7 @@ import de.fhdw.ergoholics.brainphaser.model.User;
  */
 public class UserLogicFactory {
     @Inject
-    BrainPhaserApplication3 mApplication;
+    ProjectKarya mApplication;
     @Inject
     CompletionDataSource mCompletionDataSource;
     @Inject

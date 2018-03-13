@@ -5,8 +5,6 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 /**
- * Created by Daniel Hoogen on 13/03/2016.
- * <p>
  * This class implements a listener for selecting and deselecting values in a chart
  */
 public class ChartValueSelectedListener implements OnChartValueSelectedListener {

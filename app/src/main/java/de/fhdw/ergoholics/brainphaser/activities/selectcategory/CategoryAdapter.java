@@ -14,7 +14,6 @@ import de.fhdw.ergoholics.brainphaser.database.CategoryDataSource;
 import de.fhdw.ergoholics.brainphaser.model.Category;
 
 /**
- * Created by funkv on 17.02.2016.
  */
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     private List<Category> mCategories;

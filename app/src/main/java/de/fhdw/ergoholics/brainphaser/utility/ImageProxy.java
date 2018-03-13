@@ -60,7 +60,6 @@ public class ImageProxy {
                 requestCreator = Picasso.with(context).load(resourceId);
                 requestCache.put(resourceId, requestCreator);
             }
-
             return requestCreator;
         }
     }

@@ -12,7 +12,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.BrainPhaserComponent;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.activities.BrainPhaserActivity;
@@ -28,8 +28,6 @@ import de.fhdw.ergoholics.brainphaser.logic.statistics.StatisticType;
 import de.fhdw.ergoholics.brainphaser.model.User;
 
 /**
- * Created by Daniel Hoogen on 09/03/2016.
- * <p/>
  * This is the activity showing statistics for the user in a specified category
  */
 public class StatisticsActivity extends BrainPhaserActivity {
@@ -57,7 +55,7 @@ public class StatisticsActivity extends BrainPhaserActivity {
     @Inject
     ChallengeDataSource mChallengeDataSource;
     @Inject
-    BrainPhaserApplication3 mApplication;
+    ProjectKarya mApplication;
     @Inject
     CompletionDataSource mCompletionDataSource;
     @Inject
@@ -120,7 +118,7 @@ public class StatisticsActivity extends BrainPhaserActivity {
 
         //Add adapter
         mAdapter = new StatisticsAdapter(mUserLogicFactory, mChallengeDataSource,
-                (BrainPhaserApplication3) getApplication(), user, mCategoryId, mShownTypes);
+                (ProjectKarya) getApplication(), user, mCategoryId, mShownTypes);
 
         recyclerView.setAdapter(mAdapter);
     }

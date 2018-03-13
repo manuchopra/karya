@@ -18,7 +18,7 @@ import org.joda.time.format.PeriodFormatterBuilder;
 
 import java.util.Date;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.activities.usersettings.slidertimeperiod.DateComponent;
 import de.fhdw.ergoholics.brainphaser.activities.usersettings.slidertimeperiod.TimePeriodSlider;
@@ -115,8 +115,8 @@ class SettingsViewHolder extends RecyclerView.ViewHolder implements TimePeriodSl
             }
         });
 
-        final int expand = itemView.getResources().getIdentifier("ic_expand_more_white_24dp", "drawable", BrainPhaserApplication3.PACKAGE_NAME);
-        final int collapse = itemView.getResources().getIdentifier( "ic_expand_less_white_24dp","drawable", BrainPhaserApplication3.PACKAGE_NAME);
+        final int expand = itemView.getResources().getIdentifier("ic_expand_more_white_24dp", "drawable", ProjectKarya.PACKAGE_NAME);
+        final int collapse = itemView.getResources().getIdentifier( "ic_expand_less_white_24dp","drawable", ProjectKarya.PACKAGE_NAME);
 
         mConfigArea.setVisibility(View.GONE);
         mConfigArea.setOnChangeListener(new CollapsingLinearLayout.OnChangeListener() {

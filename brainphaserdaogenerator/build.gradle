@@ -7,5 +7,12 @@ dependencies {
     compile 'org.freemarker:freemarker:2.3.14'
     compile 'com.android.support:support-v4:27.0.1'
     compile 'com.android.support:appcompat-v7:26.0.0'
-
+//    compile ("com.github.bumptech.glide:glide:4.6.1") {
+//        exclude group: "com.android.support"
+//    }
+//    compile "com.android.support:support-fragment:26.1.0"
+    compile ("com.github.bumptech.glide:glide:4.6.1") {
+        exclude group: "com.android.support"
+    }
+    compile "com.android.support:support-fragment:26.1.0"
 }

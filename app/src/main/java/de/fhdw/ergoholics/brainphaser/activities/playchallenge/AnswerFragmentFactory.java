@@ -9,7 +9,6 @@ import de.fhdw.ergoholics.brainphaser.activities.playchallenge.text.TextFragment
 import de.fhdw.ergoholics.brainphaser.database.ChallengeType;
 
 /**
- * Created by Christian Kost
  * </p>
  * Abstracts and bundles the creation of Fragments for Challenge Types.
  */

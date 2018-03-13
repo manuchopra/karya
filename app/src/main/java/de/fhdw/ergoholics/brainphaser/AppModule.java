@@ -24,9 +24,9 @@ import de.fhdw.ergoholics.brainphaser.logic.statistics.ChartSettings;
  */
 @Module
 public class AppModule {
-    BrainPhaserApplication3 mApplication;
+    ProjectKarya mApplication;
 
-    public AppModule(BrainPhaserApplication3 application) {
+    public AppModule(ProjectKarya application) {
         mApplication = application;
     }
 
@@ -38,7 +38,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    BrainPhaserApplication3 providesBpApp() {
+    ProjectKarya providesBpApp() {
         return mApplication;
     }
 
@@ -56,7 +56,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    UserLogicFactory providesUserLogic(BrainPhaserApplication3 app) {
+    UserLogicFactory providesUserLogic(ProjectKarya app) {
         UserLogicFactory factory =  new UserLogicFactory();
         app.getComponent().inject(factory);
         return factory;
@@ -64,7 +64,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    ChartSettings providesChartSettings(BrainPhaserApplication3 app) {
+    ChartSettings providesChartSettings(ProjectKarya app) {
         return new ChartSettings(app);
     }
 

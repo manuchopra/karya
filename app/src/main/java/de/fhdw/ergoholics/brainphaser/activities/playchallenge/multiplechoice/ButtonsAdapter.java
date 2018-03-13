@@ -19,7 +19,6 @@ import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.model.Answer;
 
 /**
- * Created Christian Kost
  * </p>
  * Adapter which holds the Buttons for a multiple choice challenge
  */

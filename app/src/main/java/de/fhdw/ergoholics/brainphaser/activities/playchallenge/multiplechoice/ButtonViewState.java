@@ -5,12 +5,11 @@ import android.os.Parcelable;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.database.AnswerDataSource;
 import de.fhdw.ergoholics.brainphaser.model.Answer;
 
 /**
- * Created by Christian Kost
  * </p>
  * Represents an answer button's state including answer and toggle state.
  * Implement Parcelable to allow saving/restoring using bundles
@@ -44,7 +43,7 @@ public class ButtonViewState implements Parcelable {
      * @param in Parcel
      */
     private ButtonViewState(Parcel in) {
-        BrainPhaserApplication3.component.inject(this);
+        ProjectKarya.component.inject(this);
         mAnswer = mAnswerDataSource.getById(in.readLong());
         mToggleState = in.readInt() == 1;
     }

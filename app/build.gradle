@@ -77,6 +77,7 @@ repositories {
     mavenCentral()
     jcenter()
     maven { url "https://jitpack.io" }
+    maven { url 'https://maven.google.com' }
 }
 
 preBuild.dependsOn ':brainphaserdaogenerator:run'
@@ -96,6 +97,8 @@ dependencies {
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.3'
     compile 'org.adw.library:discrete-seekbar:1.0.1'
     compile 'net.danlew:android.joda:2.9.2'
+//    compile 'com.github.bumptech.glide:glide:4.6.1'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
     compile 'com.google.dagger:dagger:2.1'
     apt 'com.google.dagger:dagger-compiler:2.1'

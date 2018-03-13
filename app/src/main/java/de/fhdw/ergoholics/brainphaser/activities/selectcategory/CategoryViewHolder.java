@@ -14,7 +14,6 @@ import de.fhdw.ergoholics.brainphaser.model.Category;
 import de.fhdw.ergoholics.brainphaser.utility.ImageProxy;
 
 /**
- * Created by funkv on 08.03.2016.
  *
  * The view holder is responsible for the view interaction with each Category within a
  * RecyclerView.

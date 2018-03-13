@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.database.AnswerDataSource;
 import de.fhdw.ergoholics.brainphaser.database.CategoryDataSource;
 import de.fhdw.ergoholics.brainphaser.database.ChallengeDataSource;
@@ -13,7 +13,6 @@ import de.fhdw.ergoholics.brainphaser.model.Category;
 import de.fhdw.ergoholics.brainphaser.model.Challenge;
 
 /**
- * Created by Daniel Hoogen on 25/02/2016.
  */
 public class BPCWrite {
     //Attributes
@@ -29,7 +28,7 @@ public class BPCWrite {
      *
      * @param application the BrainPhaserApplication to be saved as a member attribute
      */
-    public BPCWrite(BrainPhaserApplication3 application) {
+    public BPCWrite(ProjectKarya application) {
         application.getComponent().inject(this);
     }
 

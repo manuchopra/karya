@@ -30,7 +30,6 @@ import de.fhdw.ergoholics.brainphaser.logic.UserManager;
 import de.fhdw.ergoholics.brainphaser.model.Category;
 
 /**
- * Created by funkv on 17.02.2016.
  */
 public class SelectCategoryPage extends BrainPhaserFragment implements CategoryAdapter.SelectionListener {
     RecyclerView mRecyclerView;

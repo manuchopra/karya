@@ -43,8 +43,6 @@ import de.fhdw.ergoholics.brainphaser.model.User;
 import de.fhdw.ergoholics.brainphaser.utility.ImageProxy;
 
 /**
- * Created by Christian Kost
- * <p/>
  * Activity used to handle challenges. Loads fragments depending on the
  * challenge type. Implements the interface to determine when an challenge was checked and when a
  * self check challenge was checked.

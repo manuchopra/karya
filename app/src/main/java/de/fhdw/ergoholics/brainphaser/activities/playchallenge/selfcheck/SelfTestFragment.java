@@ -12,7 +12,6 @@ import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.activities.playchallenge.AnswerFragment;
 
 /**
- * Created by Christian Kost
  * <p/>
  * Fragment for a self-check challenge.
  */

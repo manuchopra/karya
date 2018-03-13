@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.activities.main.MainActivity;
 import de.fhdw.ergoholics.brainphaser.logic.fileimport.FileImport;
@@ -23,7 +23,6 @@ import de.fhdw.ergoholics.brainphaser.logic.fileimport.exceptions.InvalidAttribu
 import de.fhdw.ergoholics.brainphaser.logic.fileimport.exceptions.UnexpectedElementException;
 
 /**
- * Created by Daniel Hoogen on 16/02/2016.
  * <p>
  * This is the activity shown when a bpc file is opened with the app
  */
@@ -80,7 +79,7 @@ public class ImportChallengeActivity extends Activity implements DialogInterface
         String message;
         try {
             if (is != null) {
-                FileImport.importBPC(is, (BrainPhaserApplication3) getApplication());
+                FileImport.importBPC(is, (ProjectKarya) getApplication());
                 message = "Datei erfolgreich importiert!";
             } else {
                 message = "Dateiimport fehlgeschlagen!";

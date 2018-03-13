@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.BrainPhaserComponent;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.activities.BrainPhaserActivity;
@@ -18,7 +18,6 @@ import de.fhdw.ergoholics.brainphaser.logic.UserManager;
 import de.fhdw.ergoholics.brainphaser.logic.fileimport.FileImport;
 
 /**
- * Created by funkv on 29.02.2016.
  *
  * The activity redirects to user creation on first launch. On later launches it loads last selected
  * user and redirects to the main activity.
@@ -48,7 +47,7 @@ public class ProxyActivity extends BrainPhaserActivity {
 
         setContentView(R.layout.activity_proxy);
 
-        BrainPhaserApplication3 application = (BrainPhaserApplication3)getApplication();
+        ProjectKarya application = (ProjectKarya) getApplication();
         if (mUserManager.logInLastUser()) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.putExtra(MainActivity.EXTRA_SHOW_LOGGEDIN_SNACKBAR, true);

@@ -16,15 +16,13 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.activities.createuser.Avatars;
 import de.fhdw.ergoholics.brainphaser.logic.UserManager;
 import de.fhdw.ergoholics.brainphaser.model.User;
 
 /**
- * Created by Christian Kost
- * <p/>
  * Adapter to load all users into a list. Contains a context menu to perform actions on the users
  */
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
@@ -33,7 +31,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     //Attributes
     private ResultListener mResultListener;
     private List<User> mUsers;
-    private BrainPhaserApplication3 mApplication;
+    private ProjectKarya mApplication;
 
     /**
      * Constructor to setup the listener, inject components and get all users
@@ -42,7 +40,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
      * @param resultListener Listener of the activity
      * @param application    App
      */
-    public UserAdapter(List<User> allUsers, ResultListener resultListener, BrainPhaserApplication3 application) {
+    public UserAdapter(List<User> allUsers, ResultListener resultListener, ProjectKarya application) {
         mUsers = allUsers;
         mResultListener = resultListener;
         mApplication = application;

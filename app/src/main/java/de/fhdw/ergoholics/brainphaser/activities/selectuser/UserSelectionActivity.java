@@ -15,7 +15,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import de.fhdw.ergoholics.brainphaser.BrainPhaserApplication3;
+import de.fhdw.ergoholics.brainphaser.ProjectKarya;
 import de.fhdw.ergoholics.brainphaser.BrainPhaserComponent;
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.activities.BrainPhaserActivity;
@@ -33,7 +33,6 @@ import de.fhdw.ergoholics.brainphaser.model.User;
 import de.fhdw.ergoholics.brainphaser.utility.DividerItemDecoration;
 
 /**
- * Created by Christian Kost
  * <p/>
  * Activity used to chose an existing user. Can load the create user activity and the category selection
  */
@@ -89,7 +88,7 @@ public class UserSelectionActivity extends BrainPhaserActivity implements UserAd
 
         //Create the View
         //Adapter which sets all users into the list
-        mListAdapter = new UserAdapter(allUsers, this, (BrainPhaserApplication3) getApplication());
+        mListAdapter = new UserAdapter(allUsers, this, (ProjectKarya) getApplication());
         userList.setAdapter(mListAdapter);
 
         /**
