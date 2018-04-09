@@ -29,8 +29,7 @@ public class ChallengeDao extends AbstractDao<Challenge, Long> {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property ChallengeType = new Property(1, int.class, "challengeType", false, "CHALLENGE_TYPE");
         public final static Property Question = new Property(2, String.class, "question", false, "QUESTION");
-        public final static Property Image = new Property(3, String.class, "image", false, "IMAGE");
-        public final static Property CategoryId = new Property(4, long.class, "categoryId", false, "CATEGORY_ID");
+        public final static Property CategoryId = new Property(3, long.class, "categoryId", false, "CATEGORY_ID");
     };
 
     private DaoSession daoSession;
@@ -53,8 +52,7 @@ public class ChallengeDao extends AbstractDao<Challenge, Long> {
                 "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
                 "\"CHALLENGE_TYPE\" INTEGER NOT NULL ," + // 1: challengeType
                 "\"QUESTION\" TEXT NOT NULL ," + // 2: question
-                "\"IMAGE\" TEXT NOT NULL ," + // 3: image
-                "\"CATEGORY_ID\" INTEGER NOT NULL );"); // 4: categoryId
+                "\"CATEGORY_ID\" INTEGER NOT NULL );"); // 3: categoryId
     }
 
     /** Drops the underlying database table. */
@@ -74,8 +72,7 @@ public class ChallengeDao extends AbstractDao<Challenge, Long> {
         }
         stmt.bindLong(2, entity.getChallengeType());
         stmt.bindString(3, entity.getQuestion());
-        stmt.bindString(4, entity.getImage());
-        stmt.bindLong(5, entity.getCategoryId());
+        stmt.bindLong(4, entity.getCategoryId());
     }
 
     @Override
@@ -97,8 +94,7 @@ public class ChallengeDao extends AbstractDao<Challenge, Long> {
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.getInt(offset + 1), // challengeType
             cursor.getString(offset + 2), // question
-            cursor.getString(offset + 3), // image
-            cursor.getLong(offset + 4) // categoryId
+            cursor.getLong(offset + 3) // categoryId
         );
         return entity;
     }
@@ -109,8 +105,7 @@ public class ChallengeDao extends AbstractDao<Challenge, Long> {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setChallengeType(cursor.getInt(offset + 1));
         entity.setQuestion(cursor.getString(offset + 2));
-        entity.setImage(cursor.getString(offset + 3));
-        entity.setCategoryId(cursor.getLong(offset + 4));
+        entity.setCategoryId(cursor.getLong(offset + 3));
      }
     
     /** @inheritdoc */

@@ -164,8 +164,6 @@ public class MainActivity extends BrainPhaserActivity {
     protected void onStart() {
         super.onStart();
 
-
-
         Intent intent = getIntent();
         if (intent == null) {
             return;

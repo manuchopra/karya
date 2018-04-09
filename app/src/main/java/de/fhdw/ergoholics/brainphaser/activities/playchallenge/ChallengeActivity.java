@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
@@ -158,10 +159,22 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
         } else {
             initializeMetaData();
             mQuestionText.setText(mCurrentChallenge.getQuestion());
-            if (ImageProxy.isDrawableImage(mCurrentChallenge.getImage())) {
-                mImage.setImageResource(ImageProxy.getResourceId(mCurrentChallenge.getImage(), mFloatingActionButton.getContext()));
+
+            String imagePath1 = "R.drawable.fmage";
+            Long imagePath2 = mCurrentChallenge.getId();
+
+            String image = imagePath1 + imagePath2;
+
+            int imagePath3 = Integer.parseInt(image);
+
+            String imagePath = "@drawable/fmage1.jpg";
+
+            Log.d(imagePath3 + "","Image Path");
+
+            if (ImageProxy.isDrawableImage(imagePath)) {
+                mImage.setImageResource(imagePath3);
             } else {
-                ImageProxy.loadImage(mCurrentChallenge.getImage(), mFloatingActionButton.getContext()).into(mImage);
+                ImageProxy.loadImage(imagePath, mFloatingActionButton.getContext()).into(mImage);
             }
         }
 
@@ -197,12 +210,24 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
         transaction.disallowAddToBackStack();
 
         mQuestionText.setText(mCurrentChallenge.getQuestion());
-//        mImage.setImageResource(R.drawable.all);
-        if (ImageProxy.isDrawableImage(mCurrentChallenge.getImage())) {
-            mImage.setImageResource(ImageProxy.getResourceId(mCurrentChallenge.getImage(), mFloatingActionButton.getContext()));
-        } else {
-            ImageProxy.loadImage(mCurrentChallenge.getImage(), mFloatingActionButton.getContext()).into(mImage);
-        }
+
+        String imagePath1 = "R.drawable.fmage";
+        Long imagePath2 = mCurrentChallenge.getId();
+
+        String image = imagePath1 + imagePath2;
+
+        int imagePath3 = R.drawable.fmage1;
+
+        String mDrawableName = "fmage" + imagePath2;
+        int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
+
+        Log.d(mDrawableName,"Image Path");
+
+//        if (ImageProxy.isDrawableImage(imagePath)) {
+        mImage.setImageResource(resID);
+//        } else {
+//            ImageProxy.loadImage(imagePath, mFloatingActionButton.getContext()).into(mImage);
+//        }
 
         AnswerFragment fragment = mAnswerFragmentFactory.createFragmentForType(mCurrentChallenge.getChallengeType());
         fragment.setArguments(fragmentArguments);

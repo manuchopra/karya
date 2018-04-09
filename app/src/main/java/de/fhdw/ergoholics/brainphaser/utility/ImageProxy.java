@@ -2,6 +2,7 @@ package de.fhdw.ergoholics.brainphaser.utility;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.util.Log;
 import android.util.SparseArray;
 
 import com.squareup.picasso.Picasso;
@@ -41,6 +42,7 @@ public class ImageProxy {
 
         Resources resources = context.getResources();
         String resourceName = imagePath.substring("@drawable/".length());
+        Log.d(resourceName,"resourceName");
         return resources.getIdentifier(resourceName, "drawable", context.getPackageName());
     }
 

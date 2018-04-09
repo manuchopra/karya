@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dip"
                 android:scaleType="centerCrop"
-                android:src="@drawable/computer"/>
+                android:src="@drawable/c1" />
 
             <TextView
                 android:id="@+id/categoryTitle"
@@ -42,7 +42,7 @@
                 android:layout_marginBottom="8dip"
                 android:layout_marginLeft="16dip"
                 android:includeFontPadding="false"
-                android:text="Computer"
+                android:text="डिजिटायजेशन"
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"/>
         </RelativeLayout>
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:text="Text"
+                android:text="Hey! The category will load here in a hot second!"
                 android:textAppearance="?android:attr/textAppearance"
                 android:textColor="@android:color/secondary_text_light" />
 

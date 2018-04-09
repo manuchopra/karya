@@ -9,8 +9,6 @@ import de.fhdw.ergoholics.brainphaser.model.ChallengeDao;
 import de.fhdw.ergoholics.brainphaser.model.DaoSession;
 
 /**
- * Created by Daniel Hoogen on 25/02/2016.
- * <p/>
  * Data Source class for custom access to challenge table entries in the database
  */
 public class ChallengeDataSource {
@@ -34,6 +32,7 @@ public class ChallengeDataSource {
      */
     public List<Challenge> getAll() {
         return mDaoSession.getChallengeDao().loadAll();
+        //change this to only load what's required
     }
 
     /**

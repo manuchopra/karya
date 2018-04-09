@@ -47,7 +47,7 @@ android {
 
 
     compileSdkVersion 23
-    buildToolsVersion "24"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "de.fhdw.ergoholics.brainphaser"
@@ -97,6 +97,8 @@ dependencies {
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.3'
     compile 'org.adw.library:discrete-seekbar:1.0.1'
     compile 'net.danlew:android.joda:2.9.2'
+//    provided 'com.newtronlabs.easypermissions:easypermissions:2.1.0'
+
 //    compile 'com.github.bumptech.glide:glide:4.6.1'
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
@@ -129,5 +131,6 @@ dependencies {
     }
 
     androidTestApt 'com.google.dagger:dagger-compiler:2.1'
+//    compile 'com.newtronlabs.easypermissions:easypermissions:2.1.0'
 }
 

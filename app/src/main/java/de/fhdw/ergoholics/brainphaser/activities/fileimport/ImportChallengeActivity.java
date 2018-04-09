@@ -79,6 +79,7 @@ public class ImportChallengeActivity extends Activity implements DialogInterface
         String message;
         try {
             if (is != null) {
+                Log.d("caught you","it's lagging because it's here");
                 FileImport.importBPC(is, (ProjectKarya) getApplication());
                 message = "Datei erfolgreich importiert!";
             } else {

@@ -16,8 +16,6 @@ import de.fhdw.ergoholics.brainphaser.model.Completion;
 import de.fhdw.ergoholics.brainphaser.model.User;
 
 /**
- * Created by Daniel Hoogen on 25/02/2016.
- * <p/>
  * This class contains the logic for reading due challenges from the databases
  */
 public class DueChallengeLogic {

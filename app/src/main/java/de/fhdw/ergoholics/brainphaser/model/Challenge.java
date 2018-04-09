@@ -14,8 +14,6 @@ public class Challenge {
     private int challengeType;
     /** Not-null value. */
     private String question;
-    /** Not-null value. */
-    private String image;
     private long categoryId;
 
     /** Used to resolve relations */
@@ -33,11 +31,10 @@ public class Challenge {
         this.id = id;
     }
 
-    public Challenge(Long id, int challengeType, String question, String image, long categoryId) {
+    public Challenge(Long id, int challengeType, String question, long categoryId) {
         this.id = id;
         this.challengeType = challengeType;
         this.question = question;
-        this.image = image;
         this.categoryId = categoryId;
     }
 
@@ -71,16 +68,6 @@ public class Challenge {
     /** Not-null value; ensure this value is available before it is saved to the database. */
     public void setQuestion(String question) {
         this.question = question;
-    }
-
-    /** Not-null value. */
-    public String getImage() {
-        return image;
-    }
-
-    /** Not-null value; ensure this value is available before it is saved to the database. */
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public long getCategoryId() {

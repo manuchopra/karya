@@ -69,12 +69,18 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
         int amountDue = 0;
         if (position == 0) {
             for (Category category : mCategories) {
-                amountDue += mDueChallengeCounts.get(category.getId());
+                if (category.getId() != null) {
+                    if (mDueChallengeCounts.get(category.getId()) != null) {
+                        amountDue += mDueChallengeCounts.get(category.getId());
+                    }
+                }
             }
             holder.bindAllCategoriesCard(amountDue);
         } else {
             final Category category = mCategories.get(position - 1);
-            holder.bindCard(category, mDueChallengeCounts.get(category.getId()));
+            if (mDueChallengeCounts.get(category.getId()) != null) {
+                holder.bindCard(category, mDueChallengeCounts.get(category.getId()));
+            }
         }
     }
 

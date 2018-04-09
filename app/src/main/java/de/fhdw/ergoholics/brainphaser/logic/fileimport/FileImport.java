@@ -52,6 +52,7 @@ public class FileImport {
         List<Answer> answerList = new ArrayList<>();
 
         //All categories, challenges and answers are read first
+        //Popov
         //So if there is any syntax error in the file, nothing will be imported
         long i = 0;
         long nextChallengeId = 0;

@@ -104,11 +104,11 @@ public class BPCObjects {
 
         Node typeNode = attributes.getNamedItem("type");
         Node questionNode = attributes.getNamedItem("question");
-        Node imageNode = attributes.getNamedItem("image");
+//        Node imageNode = attributes.getNamedItem("image");
 
         int type = Integer.parseInt(typeNode.getNodeValue());
         String question = questionNode.getNodeValue();
-        String image = imageNode.getNodeValue();
+//        String image = imageNode.getNodeValue();
 
         //Validate challenge type
         if (type != ChallengeType.MULTIPLE_CHOICE && type != ChallengeType.SELF_TEST && type != ChallengeType.TEXT) {
@@ -116,7 +116,7 @@ public class BPCObjects {
         }
 
         //Add challenge to the list //makechange
-        challengeList.add(new Challenge(challengeId, type, question, image,categoryId));
+        challengeList.add(new Challenge(challengeId, type, question ,categoryId));
 
         Node childChallenge = challengeNode.getFirstChild();
 

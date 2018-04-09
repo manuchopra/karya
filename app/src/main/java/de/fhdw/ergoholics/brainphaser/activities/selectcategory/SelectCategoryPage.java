@@ -2,11 +2,13 @@ package de.fhdw.ergoholics.brainphaser.activities.selectcategory;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.util.LongSparseArray;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,7 +67,7 @@ public class SelectCategoryPage extends BrainPhaserFragment implements CategoryA
     }
 
     /**
-     * This method is called to create th fragment view
+     * This method is called to create the fragment view
      *
      * @param inflater the layout inflater to inflate the layout with
      * @param container the container the view is created in
@@ -96,7 +98,7 @@ public class SelectCategoryPage extends BrainPhaserFragment implements CategoryA
     /**
      * Reloads the due challenge counts from the database.
      */
-    private void refreshChallengeCounts( ) {
+    private void refreshChallengeCounts() {
         mDueChallengeCounts = mDueChallengeLogic.getDueChallengeCounts(mCategories);
     }
 
@@ -104,7 +106,7 @@ public class SelectCategoryPage extends BrainPhaserFragment implements CategoryA
      * Reloads due counts and sorts categories so that those with more due challenges appear
      * further up in the list.
      */
-    private void sortCategories( ) {
+    private void sortCategories() {
         refreshChallengeCounts();
         Collections.sort(mCategories, new Comparator<Category>() {
             @Override
@@ -117,10 +119,10 @@ public class SelectCategoryPage extends BrainPhaserFragment implements CategoryA
     /**
      * Load due counts & sort categories
      */
-    public void loadDueCounts( ){
-        sortCategories();
+    public void loadDueCounts(){
+        sortCategories(); //not needed right now as we only have one category
         // Sort reloads the due challenges so we need to notify the adapter that they changed.
-        ((CategoryAdapter) mRecyclerView.getAdapter()).notifyDueChallengeCountsChanged(mDueChallengeCounts);
+//        ((CategoryAdapter) mRecyclerView.getAdapter()).notifyDueChallengeCountsChanged(mDueChallengeCounts);
     }
 
     /**
@@ -130,17 +132,37 @@ public class SelectCategoryPage extends BrainPhaserFragment implements CategoryA
     @Override
     public void onStart() {
         super.onStart();
-        loadDueCounts();
+        //create an Async thread to do this?
+        AsyncLoad loadCount= new AsyncLoad();
+        loadCount.execute();
+      //  loadDueCounts();
     }
 
-    /**
+    public class AsyncLoad extends AsyncTask<String, String, String> {
+
+        @Override
+        protected String doInBackground(String... strings) {
+            loadDueCounts();
+            return "all loaded!";
+        }
+
+        protected void onPostExecute(String s) {
+//            Log.d("where you at","reached this far");
+            ((CategoryAdapter) mRecyclerView.getAdapter()).notifyDueChallengeCountsChanged(mDueChallengeCounts);
+
+        }
+    }
+
+        /**
      * Sort categories when activity is resumed, to make sure the set is sorted when returning
      * from challenge solving
      */
     @Override
     public void onResume() {
         super.onResume();
-        loadDueCounts();
+        AsyncLoad loadCount= new AsyncLoad();
+        loadCount.execute();
+//        loadDueCounts();
     }
 
     /**

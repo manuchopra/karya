@@ -84,7 +84,6 @@ public class BrainphaserDaoGenerator {
         challenge.addIdProperty();
         challenge.addIntProperty("challengeType").notNull();
         challenge.addStringProperty("question").notNull();
-        challenge.addStringProperty("image").notNull();
         return challenge;
     }
 
