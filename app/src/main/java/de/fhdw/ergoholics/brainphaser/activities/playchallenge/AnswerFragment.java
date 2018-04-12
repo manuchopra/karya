@@ -39,6 +39,8 @@ public abstract class AnswerFragment extends BrainPhaserFragment {
      */
     public abstract ContinueMode goToNextState();
 
+    public abstract long getTimeTaken();
+
     /**
      * Saves the current Challenge-Id
      *

@@ -11,7 +11,7 @@ public class Statistics {
 
     private Long id;
     private Boolean succeeded;
-    private java.util.Date time;
+    private Long time;
     private long userId;
     private long challengeId;
 
@@ -32,7 +32,7 @@ public class Statistics {
         this.id = id;
     }
 
-    public Statistics(Long id, Boolean succeeded, java.util.Date time, long userId, long challengeId) {
+    public Statistics(Long id, Boolean succeeded, Long time, long userId, long challengeId) {
         this.id = id;
         this.succeeded = succeeded;
         this.time = time;
@@ -62,11 +62,11 @@ public class Statistics {
         this.succeeded = succeeded;
     }
 
-    public java.util.Date getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(java.util.Date time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 

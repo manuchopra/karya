@@ -109,11 +109,7 @@ public class BrainphaserDaoGenerator {
         Entity completed = schema.addEntity("Statistics");
         completed.addIdProperty();
         completed.addBooleanProperty("succeeded");
-        completed.addDateProperty("time");
-//        completed.addLongProperty("startingTime")
-//                .customType("com.example.UserTimestamp", "com.example.UserTimestampConverter");
-//        completed.addLongProperty("finishingTime")
-//                .customType("com.example.UserTimestamp", "com.example.UserTimestampConverter");
+        completed.addLongProperty("time");
         return completed;
     }
 

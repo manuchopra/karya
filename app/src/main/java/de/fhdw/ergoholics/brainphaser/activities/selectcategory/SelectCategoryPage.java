@@ -143,13 +143,13 @@ public class SelectCategoryPage extends BrainPhaserFragment implements CategoryA
         @Override
         protected String doInBackground(String... strings) {
             loadDueCounts();
+//            publishProgress();
             return "all loaded!";
         }
 
         protected void onPostExecute(String s) {
 //            Log.d("where you at","reached this far");
             ((CategoryAdapter) mRecyclerView.getAdapter()).notifyDueChallengeCountsChanged(mDueChallengeCounts);
-
         }
     }
 

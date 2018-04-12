@@ -72,10 +72,13 @@ public class ProxyActivity extends BrainPhaserActivity {
      */
 
     ProjectKarya application = (ProjectKarya) getApplication();
+    public static BrainPhaserComponent component;
+
 
     public void onCreate(Bundle savedInstanceState) {
         askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE,READ_EXST);
         askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,WRITE_EXST);
+
 
         super.onCreate(savedInstanceState);
 
@@ -108,7 +111,7 @@ public class ProxyActivity extends BrainPhaserActivity {
         }
     }
 
-    private void askForPermission(String permission, Integer requestCode) {
+    public void askForPermission(String permission, Integer requestCode) {
         if (ContextCompat.checkSelfPermission(ProxyActivity.this, permission) != PackageManager.PERMISSION_GRANTED) {
 
             // Should we show an explanation?
@@ -162,7 +165,6 @@ public class ProxyActivity extends BrainPhaserActivity {
                     }
 //                    Log.d("status","so far so good2");
 
-
                     childCategories = childCategories.getNextSibling();
                 }
 
@@ -202,7 +204,6 @@ public class ProxyActivity extends BrainPhaserActivity {
                                     answer.setId(null);
                                     mAnswerDataSource.create(answer);
                                     //end of write Answer method
-
                                     answer.setChallengeId(-1);
                                 }
                             }

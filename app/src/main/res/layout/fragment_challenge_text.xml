@@ -13,16 +13,17 @@
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         android:minHeight="70dp">
+
         <EditText
             android:id="@+id/answerText"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:hint="@string/answer"
-            android:inputType="textVisiblePassword"
-            android:singleLine="true"
             android:imeOptions="actionDone"
-            android:textColor="@color/colorPrimary"
-            android:minHeight="64dp" />
+            android:inputType="textVisiblePassword"
+            android:minHeight="64dp"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"

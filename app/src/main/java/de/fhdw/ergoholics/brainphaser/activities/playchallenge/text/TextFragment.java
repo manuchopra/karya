@@ -3,6 +3,9 @@ package de.fhdw.ergoholics.brainphaser.activities.playchallenge.text;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +31,8 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
     private TextView mAnswerInput;
     private TextInputLayout mAnswerInputLayout;
     private boolean mAnswerChecked = false;
+    private long t1;
+    private long t2;
 
     /**
      * Inject components
@@ -54,8 +59,29 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
         mAnswerInput = (EditText) view.findViewById(R.id.answerText);
         mAnswerInputLayout = (TextInputLayout) view.findViewById(R.id.input_answer_layout);
         mAnswerInput.setOnEditorActionListener(this);
+
+        mAnswerInput.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                Log.d("did the typing start","typing started");
+                t1 = System.currentTimeMillis();
+                /* start system wide timer */
+            }
+        });
+
         return view;
     }
+
 
     /**
      * Restores the old state of the view
@@ -99,9 +125,12 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
      */
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
         if (actionId == EditorInfo.IME_ACTION_DONE) { // Enter is pressed
             getActivity().findViewById(R.id.btnNextChallenge).callOnClick(); // Same as FAB click
         }
+
+
         return false;
     }
 
@@ -129,6 +158,10 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
         return answerRight;
     }
 
+    @Override
+    public long getTimeTaken(){
+        return t2-t1;
+    }
     /**
      * Checks the given answer
      *
@@ -148,7 +181,10 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
                 });
             }
             mAnswerChecked = true;
-
+            //potentially stop the timer here
+            t2 = System.currentTimeMillis();
+            Log.d("time taken is",t2-t1 + "");
+            //it works!! now we need to figure out how to store this
             return ContinueMode.CONTINUE_SHOW_FAB;
         } else {
             return ContinueMode.CONTINUE_ABORT;

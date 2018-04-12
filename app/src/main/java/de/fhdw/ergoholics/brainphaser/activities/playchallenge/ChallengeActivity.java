@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.LongSparseArray;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
@@ -89,6 +91,7 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
     private TextView mTypeText;
     private TextView mClassText;
     private ImageView mImage;
+    private long timeTaken = 0;
 
     /**
      * {@inheritDoc}
@@ -136,71 +139,122 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
 
         //Load the user's due challenges for the selected category
         if (savedInstanceState != null) {
+            Log.d("just trying","eeh okay1");
             mAllDueChallenges = (ArrayList<Long>) savedInstanceState.getSerializable(KEY_ALL_DUE_CHALLENGES);
             mLoadNextChallengeOnFabClick = savedInstanceState.getBoolean(KEY_NEXT_ON_FAB);
             mChallengeNo = savedInstanceState.getInt(KEY_CHALLENGE_ID, 0);
-        } else {
-            final User currentUser = mUserManager.getCurrentUser();
-            DueChallengeLogic dueChallengeLogic = mUserLogicFactory.createDueChallengeLogic(currentUser);
-            mAllDueChallenges = new ArrayList<>(dueChallengeLogic.getDueChallenges(categoryId));
-            Collections.shuffle(mAllDueChallenges);
-        }
 
-        //Load the empty state screen if no challenges are due
-        if (mAllDueChallenges == null || mAllDueChallenges.size() < 1) {
-            loadFinishScreen();
-            return;
-        }
+            //Load the empty state screen if no challenges are due
+            if (mAllDueChallenges == null || mAllDueChallenges.size() < 1) {
+                loadFinishScreen();
+                return;
+            }
 
-        //load the challenge if no saved instance state, else subviews are responsible for loading state
-        mCurrentChallenge = mChallengeDataSource.getById(mAllDueChallenges.get(mChallengeNo));
-        if (savedInstanceState == null) {
-            loadChallenge();
-        } else {
-            initializeMetaData();
-            mQuestionText.setText(mCurrentChallenge.getQuestion());
-
-            String imagePath1 = "R.drawable.fmage";
-            Long imagePath2 = mCurrentChallenge.getId();
-
-            String image = imagePath1 + imagePath2;
-
-            int imagePath3 = Integer.parseInt(image);
-
-            String imagePath = "@drawable/fmage1.jpg";
-
-            Log.d(imagePath3 + "","Image Path");
-
-            if (ImageProxy.isDrawableImage(imagePath)) {
-                mImage.setImageResource(imagePath3);
+            //load the challenge if no saved instance state, else subviews are responsible for loading state
+            mCurrentChallenge = mChallengeDataSource.getById(mAllDueChallenges.get(mChallengeNo));
+            if (savedInstanceState == null) {
+                loadChallenge();
             } else {
-                ImageProxy.loadImage(imagePath, mFloatingActionButton.getContext()).into(mImage);
+                initializeMetaData();
+                mQuestionText.setText(mCurrentChallenge.getQuestion());
+
+                String imagePath1 = "R.drawable.fmage";
+                Long imagePath2 = mCurrentChallenge.getId();
+
+                String image = imagePath1 + imagePath2;
+
+                int imagePath3 = Integer.parseInt(image);
+
+                String imagePath = "@drawable/fmage1.jpg";
+
+                Log.d(imagePath3 + "","Image Path");
+
+                if (ImageProxy.isDrawableImage(imagePath)) {
+                    mImage.setImageResource(imagePath3);
+                } else {
+                    ImageProxy.loadImage(imagePath, mFloatingActionButton.getContext()).into(mImage);
+                }
             }
-        }
 
-        //setup progressbar
-        mProgress.setMax(mAllDueChallenges.size() * 100);
-        mProgress.setProgress(mChallengeNo * 100);
+            // Setup Floating Action Button
+            if (mLoadNextChallengeOnFabClick) {
+                mFloatingActionButton.setImageResource(R.drawable.ic_navigate_next_white_24dp);
+            } else {
+                mFloatingActionButton.setImageResource(R.drawable.ic_check_white_24dp);
+            }
 
-        // Setup Floating Action Button
-        if (mLoadNextChallengeOnFabClick) {
-            mFloatingActionButton.setImageResource(R.drawable.ic_navigate_next_white_24dp);
+            mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    floatingActionButtonClicked();
+                }
+            });
+
         } else {
-            mFloatingActionButton.setImageResource(R.drawable.ic_check_white_24dp);
+            Log.d("just trying","potential lag 1 start");
+            //maybe this is lagging ~ maybe
+            AsyncLoad2 myLoad = new AsyncLoad2();
+            myLoad.execute(categoryId);
         }
-
-        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                floatingActionButtonClicked();
-            }
-        });
     }
 
-    /**
+    public class AsyncLoad2 extends AsyncTask<Long, String, String> {
+
+        @Override
+        protected String doInBackground(Long... longs) {
+            final User currentUser = mUserManager.getCurrentUser();
+            DueChallengeLogic dueChallengeLogic = mUserLogicFactory.createDueChallengeLogic(currentUser);
+            mAllDueChallenges = new ArrayList<>(dueChallengeLogic.getDueChallenges(longs[0]));
+            Collections.shuffle(mAllDueChallenges);
+            publishProgress();
+            return null;
+        }
+
+        protected void onProgressUpdate(Integer... progress) {
+            Log.d("called?","called!");
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+
+            mCurrentChallenge = mChallengeDataSource.getById(mAllDueChallenges.get(mChallengeNo));
+
+            //Load the empty state screen if no challenges are due
+            if (mAllDueChallenges == null || mAllDueChallenges.size() < 1) {
+                loadFinishScreen();
+                return;
+            }
+
+            loadChallenge();
+
+            // Setup Floating Action Button
+            if (mLoadNextChallengeOnFabClick) {
+                mFloatingActionButton.setImageResource(R.drawable.ic_navigate_next_white_24dp);
+            } else {
+                mFloatingActionButton.setImageResource(R.drawable.ic_check_white_24dp);
+            }
+
+            mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    floatingActionButtonClicked();
+                }
+            });
+            Log.d("just trying","potential lag 1 over");
+
+        }
+    }
+
+
+        /**
      * Loads the current challenge into its fragment depending on the challenge-type
      */
     private void loadChallenge() {
+        Log.d("just trying","called load challenge");
+
+        Log.d("just trying","potential lag 2 start");
+
+
         //Bundle to transfer the ChallengeId to the fragments
         Bundle fragmentArguments = new Bundle();
         fragmentArguments.putLong(KEY_CHALLENGE_ID, mCurrentChallenge.getId());
@@ -209,26 +263,9 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.disallowAddToBackStack();
 
-        mQuestionText.setText(mCurrentChallenge.getQuestion());
-
-        String imagePath1 = "R.drawable.fmage";
-        Long imagePath2 = mCurrentChallenge.getId();
-
-        String image = imagePath1 + imagePath2;
-
-        int imagePath3 = R.drawable.fmage1;
-
-        String mDrawableName = "fmage" + imagePath2;
-        int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
-
-        Log.d(mDrawableName,"Image Path");
-
-//        if (ImageProxy.isDrawableImage(imagePath)) {
-        mImage.setImageResource(resID);
 //        } else {
 //            ImageProxy.loadImage(imagePath, mFloatingActionButton.getContext()).into(mImage);
 //        }
-
         AnswerFragment fragment = mAnswerFragmentFactory.createFragmentForType(mCurrentChallenge.getChallengeType());
         fragment.setArguments(fragmentArguments);
         transaction.replace(R.id.challenge_fragment, fragment, "" + mCurrentChallenge.getChallengeType());
@@ -237,8 +274,28 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
         transaction.commit();
         getSupportFragmentManager().executePendingTransactions();
 
+        Log.d("just trying","potential lag 2 end");
+
+        Log.d("just trying","potential lag 3 start");
+
+        mQuestionText.setText(mCurrentChallenge.getQuestion());
+
+        Long imagePath2 = mCurrentChallenge.getId();
+
+        String mDrawableName = "fmage" + imagePath2;
+        int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
+
+        Log.d(mDrawableName,"Image Path");
+
+        mImage.setImageResource(resID);
+
         // Load new meta data
         initializeMetaData();
+
+        Log.d("just trying","potential lag 3 end");
+
+
+
     }
 
     /**
@@ -286,6 +343,7 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
                 break;
             case CONTINUE_SHOW_FAB:
                 mLoadNextChallengeOnFabClick = true;
+                timeTaken = currentFragment.getTimeTaken();
                 mFloatingActionButton.setImageResource(R.drawable.ic_navigate_next_white_24dp);
                 break;
             case CONTINUE_ABORT:
@@ -306,8 +364,8 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
         // Save the user completion for due calculation
         mCompletionLogic.updateAfterAnswer(mAllDueChallenges.get(mChallengeNo), currentUser.getId(), answer ? CompletionLogic.ANSWER_RIGHT : CompletionLogic.ANSWER_WRONG);
 
-        //Create statistics entry
-        Statistics statistics = new Statistics(null, answer, new Date(), currentUser.getId(), mAllDueChallenges.get(mChallengeNo));
+                //Create statistics entry
+        Statistics statistics = new Statistics(null, answer, timeTaken, currentUser.getId(), mAllDueChallenges.get(mChallengeNo));
         mStatisticsDataSource.create(statistics);
 
         if (switchToNext) {

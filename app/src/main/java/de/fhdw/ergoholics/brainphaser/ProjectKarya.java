@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
+import java.lang.reflect.Proxy;
 import java.util.Set;
 
 import javax.inject.Singleton;
@@ -33,10 +34,11 @@ public class ProjectKarya extends Application {
     static final Integer WRITE_EXST = 0x3;
     static final Integer READ_EXST = 0x4;
 
+
     /**
      * Creates the Production app Component
      */
-    protected BrainPhaserComponent createComponent( ) {
+    public BrainPhaserComponent createComponent() {
         return DaggerProjectKarya_ApplicationComponent.builder()
             .appModule(new AppModule(this))
             .databaseModule(new DatabaseModule(getApplicationContext(), "/mnt/sdcard/storage3.db"))
@@ -58,45 +60,22 @@ public class ProjectKarya extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-//        askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE,READ_EXST);
-//        askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,WRITE_EXST);
-//        EasyPermissions.getInstance().requestPermissions(this, this,
-//                Manifest.permission.READ_EXTERNAL_STORAGE,
-//                Manifest.permission.WRITE_EXTERNAL_STORAGE);
-//
+        ProxyActivity newActivity = new ProxyActivity();
+
         JodaTimeAndroid.init(this);
-        component = createComponent();
+        if (ContextCompat.checkSelfPermission(ProjectKarya.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(ProjectKarya.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                component = createComponent();
+            }
+        } else {
+            newActivity.askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE,READ_EXST);
+            newActivity.askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,WRITE_EXST);
+
+            component = createComponent();
+        }
+
         PACKAGE_NAME = getApplicationContext().getPackageName();
     }
-
-//    @Override
-//    public void onRequestSent(Set<String> set) {
-//
-//    }
-//
-//    @Override
-//    public void onFailure() {
-//
-//    }
-
-//    private void askForPermission(String permission, Integer requestCode) {
-//        if (ContextCompat.checkSelfPermission(ProjectKarya.this, permission) != PackageManager.PERMISSION_GRANTED) {
-//
-//            // Should we show an explanation?
-//            if (ActivityCompat.shouldShowRequestPermissionRationale(ProjectKarya.this, permission)) {
-//
-//                //This is called if user has denied the permission before
-//                //In this case I am just asking the permission again
-//                ActivityCompat.requestPermissions(ProxyActivity.this, new String[]{permission}, requestCode);
-//
-//            } else {
-//
-//                ActivityCompat.requestPermissions(this, new String[]{permission}, requestCode);
-//            }
-//        } else {
-//            Toast.makeText(this, "" + permission + " is already granted.", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 
 
     /**

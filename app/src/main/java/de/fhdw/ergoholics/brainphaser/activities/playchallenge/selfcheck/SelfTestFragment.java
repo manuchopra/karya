@@ -105,6 +105,12 @@ public class SelfTestFragment extends AnswerFragment {
         return ContinueMode.CONTINUE_HIDE_FAB;
     }
 
+    @Override
+    public long getTimeTaken(){
+        return 0;
+    }
+
+
     /**
      * Inject components
      *

@@ -109,6 +109,11 @@ public class MultipleChoiceFragment extends AnswerFragment {
         return view;
     }
 
+    @Override
+    public long getTimeTaken(){
+        return 0;
+    }
+
     /**
      * Checks if the given answer is correct, displays it and passes the event on to the activity
      */

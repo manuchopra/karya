@@ -26,7 +26,7 @@ public class AnswerFragmentFactory {
         challengeTypeFactories.put(ChallengeType.TEXT, new AnswerFragmentCreator() {
             @Override
             public AnswerFragment createFragment() {
-                return new TextFragment();
+                return new TextFragment(); //this is the challenge type we are using for Soda
             }
         });
         challengeTypeFactories.put(ChallengeType.SELF_TEST, new AnswerFragmentCreator() {
