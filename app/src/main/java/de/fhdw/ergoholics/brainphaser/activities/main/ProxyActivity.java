@@ -79,7 +79,6 @@ public class ProxyActivity extends BrainPhaserActivity {
         askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE,READ_EXST);
         askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,WRITE_EXST);
 
-
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_proxy);

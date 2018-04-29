@@ -60,19 +60,20 @@ public class ProjectKarya extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ProxyActivity newActivity = new ProxyActivity();
+//        ProxyActivity newActivity = new ProxyActivity();
 
         JodaTimeAndroid.init(this);
         if (ContextCompat.checkSelfPermission(ProjectKarya.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             if (ContextCompat.checkSelfPermission(ProjectKarya.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                 component = createComponent();
             }
-        } else {
-            newActivity.askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE,READ_EXST);
-            newActivity.askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,WRITE_EXST);
-
-            component = createComponent();
         }
+//        } else {
+//            newActivity.askForPermission(Manifest.permission.READ_EXTERNAL_STORAGE,READ_EXST);
+//            newActivity.askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,WRITE_EXST);
+//
+//            component = createComponent();
+//        }
 
         PACKAGE_NAME = getApplicationContext().getPackageName();
     }

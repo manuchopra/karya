@@ -114,6 +114,11 @@ public class MultipleChoiceFragment extends AnswerFragment {
         return 0;
     }
 
+    @Override
+    public String getUserInput() {
+        return null;
+    }
+
     /**
      * Checks if the given answer is correct, displays it and passes the event on to the activity
      */

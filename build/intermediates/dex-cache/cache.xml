@@ -2,58 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/manu/.android/build-cache/d2ba6f73d298cde42e644430794da19b7b376bb0/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/manu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4c9e5923c0ebb861c4d0353ced4f830f6e3b836e/classes.dex" />
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_5ee449422007fcee388af35a7233bda5ccfd8e99.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/manu/.android/build-cache/32d5e7c497094a94c3f7d91f61ec86ad303c522b/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="814fc0c3ec69a944add398217d90077301501a74">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8523a3359fa761928c56f03895844dca6262d3de/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/manu/.android/build-cache/5b8744f6382583b86be13e1851cb57e81d6f4146/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b0333ccc0927b78ff558f05ba8362a7a9f3755bf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/manu/.android/build-cache/6cd84d82404af944671235c76ec29cb84f33b4d4/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e44999fd08efba4ddc4563a8601bf415d489b3e7">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_531c6f9debb4fed9e90e618d94b65504ce37b3ef/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/manu/.android/build-cache/88dea346e008394c510872909b4e63eec65c4d73/output/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_49c4417b25a5ca506c02c0f192e05090384c4a48/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/manu/.android/build-cache/748bce2605715ba4e29e1ddbe4f29d4b0dc84a92/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="cb86970df0f0f25f766d320b279c7858c1ca0003">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4f6dc2a14378a909b607e7ff1dfdd95e869325bc/classes.dex" />
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_49c4417b25a5ca506c02c0f192e05090384c4a48.jar" />
     </item>
     <item
         is-multidex="true"
@@ -65,31 +29,67 @@
         <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_acef6ac93c7e1cb31558c8f3520052b8247e8c71/classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/manu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/manu/.android/build-cache/748bce2605715ba4e29e1ddbe4f29d4b0dc84a92/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_5ee449422007fcee388af35a7233bda5ccfd8e99/classes.dex" />
+        sha1="cb86970df0f0f25f766d320b279c7858c1ca0003">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_4f6dc2a14378a909b607e7ff1dfdd95e869325bc.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="/Users/manu/.android/build-cache/32d5e7c497094a94c3f7d91f61ec86ad303c522b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="814fc0c3ec69a944add398217d90077301501a74">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_8523a3359fa761928c56f03895844dca6262d3de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.android/build-cache/6cd84d82404af944671235c76ec29cb84f33b4d4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e44999fd08efba4ddc4563a8601bf415d489b3e7">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_531c6f9debb4fed9e90e618d94b65504ce37b3ef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.android/build-cache/5b8744f6382583b86be13e1851cb57e81d6f4146/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_b0333ccc0927b78ff558f05ba8362a7a9f3755bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/manu/.android/build-cache/8d03022d446c2b0bc661f363001f3158036a0017/output/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cbcd35e4c759e001fa0e27d97a3353f3188ae3af/classes.dex" />
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_cbcd35e4c759e001fa0e27d97a3353f3188ae3af.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/manu/.gradle/caches/modules-2/files-2.1/de.greenrobot/greendao/2.1.0/9414c1d4578673dac83a23119009624fd695726d/greendao-2.1.0.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="9414c1d4578673dac83a23119009624fd695726d">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/greendao-2.1.0_8aa5327386d28839462b8190bf43691b7ec4cda0/classes.dex" />
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/greendao-2.1.0_8aa5327386d28839462b8190bf43691b7ec4cda0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.2/70282c96e61f85cf9eebaddc748c3163fee18995/joda-time-2.9.2-no-tzdb.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="70282c96e61f85cf9eebaddc748c3163fee18995">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/joda-time-2.9.2-no-tzdb_e18d812dc7936610cfe38dc180bdb8fcbaeb520f.jar" />
     </item>
     <item
         is-multidex="true"
@@ -97,98 +97,98 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="e8eaa3426cfac1f976335ce6bdbdcabfd3cd0fcd">
+        sha1="4b65768669ef2565ffa1fda0c2c140a62b285e5c">
         <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_6d29b9f0d843b75db0832fb4ad7a01d5958ac390/classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/manu/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.2/70282c96e61f85cf9eebaddc748c3163fee18995/joda-time-2.9.2-no-tzdb.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="70282c96e61f85cf9eebaddc748c3163fee18995">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/joda-time-2.9.2-no-tzdb_e18d812dc7936610cfe38dc180bdb8fcbaeb520f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/manu/.android/build-cache/bf0a4aff10d1e2838e411209586b5d9cf1be038d/output/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="4886cba500c95f4d301136fc3fe77f686a61a3de">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a4b5282ccaf7e10c244030ad78ba9c6e5ff7b2e9/classes.dex" />
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_a4b5282ccaf7e10c244030ad78ba9c6e5ff7b2e9.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/manu/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v2.2.3/f474798fde03291398b1a016118b9809a79550b7/MPAndroidChart-v2.2.3.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="f474798fde03291398b1a016118b9809a79550b7">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/MPAndroidChart-v2.2.3_690f34051e54dae7012dd4dcef2303ab19267464/classes.dex" />
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/MPAndroidChart-v2.2.3_690f34051e54dae7012dd4dcef2303ab19267464.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/manu/.android/build-cache/f740455ebbc7edc917f046d5d991e16f695ede6b/output/jars/libs/internal_impl-23.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.1_976252a1e646e0667a96141bdd435281eec7ec60/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/manu/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_959dfc5462a89bae4ab720850a657c9aacf6078f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/manu/.android/build-cache/7dbbac814079ed5f7610878a29561bdf58228d73/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7be042dd2aa8157a2b63934902f472952d2ea1fe">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e6dbd19bbcd8aa0c7e2de84820667ea3e5f3659d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/manu/.android/build-cache/956246bacb02cc59fefe44c4e441541270e8395c/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_11613ab54b97d3d4b14e28ab8261a4677b0e40f4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/manu/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/javax.inject-1_abd4e568f64fdafbcfb7abf04e6e765acce5f5e7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/manu/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.1/73ce0d997524a7fd3b06cfc7adbb9e9ef4854754/dagger-2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="73ce0d997524a7fd3b06cfc7adbb9e9ef4854754">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/dagger-2.1_c3ef7f6e2e5b945d0afdc4266ca883900d8d66b3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/manu/.android/build-cache/f740455ebbc7edc917f046d5d991e16f695ede6b/output/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
-        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_78b07e8c5f9c5dd8b29269c49efb50dcb295a5e8/classes.dex" />
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_78b07e8c5f9c5dd8b29269c49efb50dcb295a5e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/javax.inject-1_abd4e568f64fdafbcfb7abf04e6e765acce5f5e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.android/build-cache/f740455ebbc7edc917f046d5d991e16f695ede6b/output/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_976252a1e646e0667a96141bdd435281eec7ec60.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_959dfc5462a89bae4ab720850a657c9aacf6078f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.android/build-cache/d2ba6f73d298cde42e644430794da19b7b376bb0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_4c9e5923c0ebb861c4d0353ced4f830f6e3b836e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.1/73ce0d997524a7fd3b06cfc7adbb9e9ef4854754/dagger-2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="73ce0d997524a7fd3b06cfc7adbb9e9ef4854754">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/dagger-2.1_c3ef7f6e2e5b945d0afdc4266ca883900d8d66b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.android/build-cache/956246bacb02cc59fefe44c4e441541270e8395c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_11613ab54b97d3d4b14e28ab8261a4677b0e40f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/manu/.android/build-cache/7dbbac814079ed5f7610878a29561bdf58228d73/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7be042dd2aa8157a2b63934902f472952d2ea1fe">
+        <dex dex="/Users/manu/Desktop/BrainPhaser-master/app/build/intermediates/pre-dexed/debug/classes_e6dbd19bbcd8aa0c7e2de84820667ea3e5f3659d.jar" />
     </item>
 
 </items>

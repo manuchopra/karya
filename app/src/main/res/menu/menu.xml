@@ -24,8 +24,8 @@
     <item
         android:id="@+id/action_about"
         android:icon="@drawable/ic_settings_white_24dp"
-        android:title="@string/about"
-        android:visible="false"
+        android:title="Privacy and Cookies"
+        android:visible="true"
         app:showAsAction="never" />
 
 </menu>

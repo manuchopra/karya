@@ -33,6 +33,7 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
     private boolean mAnswerChecked = false;
     private long t1;
     private long t2;
+    private String userAnswer;
 
     /**
      * Inject components
@@ -73,7 +74,6 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
             @Override
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
-                Log.d("did the typing start","typing started");
                 t1 = System.currentTimeMillis();
                 /* start system wide timer */
             }
@@ -152,10 +152,14 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
         mAnswerInput.setEnabled(false);
         mAnswerInput.clearFocus();
         if (!answerRight) {
-            mAnswerInput.setError(getString(R.string.wrong_answer));
+//            mAnswerInput.setError(getString(R.string.wrong_answer));
             mAnswerInputLayout.setErrorEnabled(true);
         }
         return answerRight;
+    }
+
+    public String getUserInput(){
+        return mAnswerInput.getText().toString().trim();
     }
 
     @Override
@@ -183,7 +187,6 @@ public class TextFragment extends AnswerFragment implements TextView.OnEditorAct
             mAnswerChecked = true;
             //potentially stop the timer here
             t2 = System.currentTimeMillis();
-            Log.d("time taken is",t2-t1 + "");
             //it works!! now we need to figure out how to store this
             return ContinueMode.CONTINUE_SHOW_FAB;
         } else {

@@ -44,7 +44,7 @@
     <string name="multiple_choice">Multiple choice</string>
     <string name="self_check">Self evaluation</string>
     <string name="text">Free text</string>
-    <string name="wrong_answer">Wrong answer</string>
+    <string name="wrong_answer"></string>
     <string name="well_done">Well done!</string>
     <string name="enjoy_day">No jobs due. Time for a break.</string>
 

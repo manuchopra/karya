@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Arrays;
 
 import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.model.Answer;
@@ -21,6 +22,8 @@ import de.fhdw.ergoholics.brainphaser.model.Answer;
 public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.AnswerViewHolder> {
     private List<Answer> mAnswers;
     private String mGivenAnswer;
+    //jugaad
+    private String[] trainingAnswers = new String[]{"क", "ख", "ग" , "का" , "खू" , "गि","मं" , "म्भ" ,"म्मी" ,"र्क" ,"नींद"};
 
     /**
      * Constructor for the answer adapter which loads the different answers of a challenge
@@ -97,16 +100,31 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.AnswerView
          * @param answer Answer text
          */
         public void bindAnswer(String answer) {
+            // Convert String Array to List
+            List<String> list = Arrays.asList(trainingAnswers);
+
             // Ff the answer equals to the given answer, mark the text
             if (mGivenAnswer != null && mGivenAnswer.equals(answer)) {
-                String response = "लय भारी! Congratulations!\n\n";
-                mAnswerText.setText(response + answer);
-                mAnswerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-                mAnswerText.setTextColor(colorRight);
+                if (list.contains(answer)){
+                    String response = "बधाई हो! Congratulations!\n\n";
+                    mAnswerText.setText(response);
+                    mAnswerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    mAnswerText.setTextColor(colorRight);
+                } else{
+                    String response = "Your response has been recorded. Thank you.\n\n";
+                    mAnswerText.setText(response);
+                    mAnswerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                }
             } else{
-                String response = ":( This is what the correct answer looks like:\n\n";
-                mAnswerText.setText(response + answer);
-                mAnswerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                if (list.contains(answer)){
+                    String response = "Oops! You got that wrong! \n\n";
+                    mAnswerText.setText(response);
+                    mAnswerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                } else{
+                    String response = "Your response has been recorded. Thank you.\n\n";
+                    mAnswerText.setText(response);
+                    mAnswerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                }
             }
         }
     }

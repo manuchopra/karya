@@ -41,6 +41,8 @@ public abstract class AnswerFragment extends BrainPhaserFragment {
 
     public abstract long getTimeTaken();
 
+    public abstract String getUserInput();
+
     /**
      * Saves the current Challenge-Id
      *

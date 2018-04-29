@@ -70,6 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_below="@+id/challengeQuestion"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/t1" />
 
                 <FrameLayout
@@ -94,7 +95,6 @@
                     android:layout_marginBottom="@dimen/fab_margin"
                     android:layout_marginRight="@dimen/fab_margin"
                     android:layout_marginTop="36dp"
-                    android:src="@drawable/ic_navigate_next_white_24dp"
                     app:layout_anchor="@id/challenge_fragment"
                     app:layout_anchorGravity="bottom|right|end"
                     tools:ignore="RtlHardcoded" />

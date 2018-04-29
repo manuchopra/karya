@@ -12,6 +12,7 @@ import de.fhdw.ergoholics.brainphaser.R;
 import de.fhdw.ergoholics.brainphaser.activities.playchallenge.AnswerFragment;
 
 /**
+ * Created by Christian Kost
  * <p/>
  * Fragment for a self-check challenge.
  */
@@ -19,6 +20,10 @@ public class SelfTestFragment extends AnswerFragment {
     private final static String KEY_CHECKING_ANSWER = "CHECKING_ANSWER";
 
     private boolean mCheckingAnswer = false;
+
+    public String getUserInput() {
+        return null;
+    }
 
     /**
      * Sets up the view depending on the state
@@ -106,10 +111,9 @@ public class SelfTestFragment extends AnswerFragment {
     }
 
     @Override
-    public long getTimeTaken(){
+    public long getTimeTaken() {
         return 0;
     }
-
 
     /**
      * Inject components

@@ -11,6 +11,7 @@ public class Statistics {
 
     private Long id;
     private Boolean succeeded;
+    private String input;
     private Long time;
     private long userId;
     private long challengeId;
@@ -32,9 +33,10 @@ public class Statistics {
         this.id = id;
     }
 
-    public Statistics(Long id, Boolean succeeded, Long time, long userId, long challengeId) {
+    public Statistics(Long id, Boolean succeeded, String input, Long time, long userId, long challengeId) {
         this.id = id;
         this.succeeded = succeeded;
+        this.input = input;
         this.time = time;
         this.userId = userId;
         this.challengeId = challengeId;
@@ -60,6 +62,14 @@ public class Statistics {
 
     public void setSucceeded(Boolean succeeded) {
         this.succeeded = succeeded;
+    }
+
+    public String getInput() {
+        return input;
+    }
+
+    public void setInput(String input) {
+        this.input = input;
     }
 
     public Long getTime() {

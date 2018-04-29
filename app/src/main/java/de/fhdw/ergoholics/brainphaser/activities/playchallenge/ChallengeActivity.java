@@ -57,6 +57,8 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
     public static final String KEY_CHALLENGE_ID = "KEY_CHALLENGE_ID";
     public static final String KEY_NEXT_ON_FAB = "KEY_NEXT_ON_FAB";
     public static final String KEY_ALL_DUE_CHALLENGES = "KEY_ALL_DUE_CHALLENGES";
+    private ArrayList<Long> mAllDueChallenges;
+
 
     @Inject
     UserManager mUserManager;
@@ -75,8 +77,6 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
     @Inject
     CompletionLogic mCompletionLogic;
 
-    private ArrayList<Long> mAllDueChallenges;
-
     //current state stuff
     private int mChallengeNo = 0;
     private Challenge mCurrentChallenge;
@@ -92,6 +92,7 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
     private TextView mClassText;
     private ImageView mImage;
     private long timeTaken = 0;
+    private String userInput = "thanos";
 
     /**
      * {@inheritDoc}
@@ -205,8 +206,8 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
             final User currentUser = mUserManager.getCurrentUser();
             DueChallengeLogic dueChallengeLogic = mUserLogicFactory.createDueChallengeLogic(currentUser);
             mAllDueChallenges = new ArrayList<>(dueChallengeLogic.getDueChallenges(longs[0]));
-            Collections.shuffle(mAllDueChallenges);
-            publishProgress();
+//          Collections.shuffle(mAllDueChallenges); //this shuffles the jobs list
+//          publishProgress();
             return null;
         }
 
@@ -252,9 +253,6 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
     private void loadChallenge() {
         Log.d("just trying","called load challenge");
 
-        Log.d("just trying","potential lag 2 start");
-
-
         //Bundle to transfer the ChallengeId to the fragments
         Bundle fragmentArguments = new Bundle();
         fragmentArguments.putLong(KEY_CHALLENGE_ID, mCurrentChallenge.getId());
@@ -284,9 +282,8 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
 
         String mDrawableName = "fmage" + imagePath2;
         int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
-
-        Log.d(mDrawableName,"Image Path");
-
+        mImage.setAdjustViewBounds(true);
+        mImage.setMaxHeight(150);
         mImage.setImageResource(resID);
 
         // Load new meta data
@@ -344,7 +341,8 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
             case CONTINUE_SHOW_FAB:
                 mLoadNextChallengeOnFabClick = true;
                 timeTaken = currentFragment.getTimeTaken();
-                mFloatingActionButton.setImageResource(R.drawable.ic_navigate_next_white_24dp);
+                userInput = currentFragment.getUserInput();
+                mFloatingActionButton.setImageResource(R.drawable.ic_navigate_next_white_24dp); //changes it to next icon
                 break;
             case CONTINUE_ABORT:
                 break;
@@ -364,8 +362,8 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
         // Save the user completion for due calculation
         mCompletionLogic.updateAfterAnswer(mAllDueChallenges.get(mChallengeNo), currentUser.getId(), answer ? CompletionLogic.ANSWER_RIGHT : CompletionLogic.ANSWER_WRONG);
 
-                //Create statistics entry
-        Statistics statistics = new Statistics(null, answer, timeTaken, currentUser.getId(), mAllDueChallenges.get(mChallengeNo));
+        //Create statistics entry
+        Statistics statistics = new Statistics(null, answer, userInput, timeTaken, currentUser.getId(), mAllDueChallenges.get(mChallengeNo));
         mStatisticsDataSource.create(statistics);
 
         if (switchToNext) {
@@ -385,6 +383,7 @@ public class ChallengeActivity extends BrainPhaserActivity implements AnswerFrag
 
         //increment counter
         mChallengeNo += 1;
+
         mCurrentChallenge = mChallengeDataSource.getById(mAllDueChallenges.get(mChallengeNo));
 
         //set the progress in the progessbar

@@ -30,9 +30,10 @@ public class StatisticsDao extends AbstractDao<Statistics, Long> {
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Succeeded = new Property(1, Boolean.class, "succeeded", false, "SUCCEEDED");
-        public final static Property Time = new Property(2, Long.class, "time", false, "TIME");
-        public final static Property UserId = new Property(3, long.class, "userId", false, "USER_ID");
-        public final static Property ChallengeId = new Property(4, long.class, "challengeId", false, "CHALLENGE_ID");
+        public final static Property Input = new Property(2, String.class, "input", false, "INPUT");
+        public final static Property Time = new Property(3, Long.class, "time", false, "TIME");
+        public final static Property UserId = new Property(4, long.class, "userId", false, "USER_ID");
+        public final static Property ChallengeId = new Property(5, long.class, "challengeId", false, "CHALLENGE_ID");
     };
 
     private DaoSession daoSession;
@@ -54,9 +55,10 @@ public class StatisticsDao extends AbstractDao<Statistics, Long> {
         db.execSQL("CREATE TABLE " + constraint + "\"STATISTICS\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
                 "\"SUCCEEDED\" INTEGER," + // 1: succeeded
-                "\"TIME\" INTEGER," + // 2: time
-                "\"USER_ID\" INTEGER NOT NULL ," + // 3: userId
-                "\"CHALLENGE_ID\" INTEGER NOT NULL );"); // 4: challengeId
+                "\"INPUT\" TEXT," + // 2: input
+                "\"TIME\" INTEGER," + // 3: time
+                "\"USER_ID\" INTEGER NOT NULL ," + // 4: userId
+                "\"CHALLENGE_ID\" INTEGER NOT NULL );"); // 5: challengeId
     }
 
     /** Drops the underlying database table. */
@@ -80,12 +82,17 @@ public class StatisticsDao extends AbstractDao<Statistics, Long> {
             stmt.bindLong(2, succeeded ? 1L: 0L);
         }
  
+        String input = entity.getInput();
+        if (input != null) {
+            stmt.bindString(3, input);
+        }
+ 
         Long time = entity.getTime();
         if (time != null) {
-            stmt.bindLong(3, time);
+            stmt.bindLong(4, time);
         }
-        stmt.bindLong(4, entity.getUserId());
-        stmt.bindLong(5, entity.getChallengeId());
+        stmt.bindLong(5, entity.getUserId());
+        stmt.bindLong(6, entity.getChallengeId());
     }
 
     @Override
@@ -106,9 +113,10 @@ public class StatisticsDao extends AbstractDao<Statistics, Long> {
         Statistics entity = new Statistics( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getShort(offset + 1) != 0, // succeeded
-            cursor.isNull(offset + 2) ? null : cursor.getLong(offset + 2), // time
-            cursor.getLong(offset + 3), // userId
-            cursor.getLong(offset + 4) // challengeId
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // input
+            cursor.isNull(offset + 3) ? null : cursor.getLong(offset + 3), // time
+            cursor.getLong(offset + 4), // userId
+            cursor.getLong(offset + 5) // challengeId
         );
         return entity;
     }
@@ -118,9 +126,10 @@ public class StatisticsDao extends AbstractDao<Statistics, Long> {
     public void readEntity(Cursor cursor, Statistics entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setSucceeded(cursor.isNull(offset + 1) ? null : cursor.getShort(offset + 1) != 0);
-        entity.setTime(cursor.isNull(offset + 2) ? null : cursor.getLong(offset + 2));
-        entity.setUserId(cursor.getLong(offset + 3));
-        entity.setChallengeId(cursor.getLong(offset + 4));
+        entity.setInput(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setTime(cursor.isNull(offset + 3) ? null : cursor.getLong(offset + 3));
+        entity.setUserId(cursor.getLong(offset + 4));
+        entity.setChallengeId(cursor.getLong(offset + 5));
      }
     
     /** @inheritdoc */
